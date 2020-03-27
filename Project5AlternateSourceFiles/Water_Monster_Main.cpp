@@ -43,8 +43,8 @@ int get_int_input(string prompt, string invalid, int low, int high) {
 void monster_mode() {
     Lake_Monster champ(0);
 
-    cout << "Welcome! Ready to hang out with Champ the Lake Monster and his friends?" << endl;
     //Print welcome message that includes the name Champ the Lake Monster
+    cout << "Welcome! Ready to hang out with Champ the Lake Monster and his friends?" << endl;
 
     // Create vector of unique pointers to Water Monsters called friends
     unique_ptr<Water_Monster> monster;
@@ -64,35 +64,37 @@ void monster_mode() {
             friends.push_back(monster);
         }
     }
-    // Call get_int_input to prompt the user to choose 1 for meal time, 2 for scare time, or 3 to exit.
 
+    // Call get_int_input to prompt the user to choose 1 for meal time, 2 for scare time, or 3 to exit.
     int choice = get_int_input("What time is it?\n 1. Meal Time\n 2. Scare Time\n 3. Exit",
             "Please select a valid option",1,3);
+    //Create a loop that runs until the user chooses option 3:
     while (choice != 3) {
+        //If 1 is chosen, loop through populated vector and call eat_person on each.
         if (choice == 1) {
             for (int i = 0; i < friends.size(); ++i) {
                 friends[i]->eat_person();
             }
         }
+        //If 2 is chosen, print message saying "This is how my friends scare:"
         if (choice == 2) {
             cout << "This is how my friends scare: " << endl;
+            //Loop through populated vector and call scare method on each pointer
             for (int i = 0; i < friends.size(); ++i) {
+                //printing return value to console
+                //TODO: check if prints
                 friends[i]->scare();
             }
+            //Print message saying how Champ scares
+            // TODO: then call and print scare method on champ.
             cout << "This is how Champ scares: " << endl;
             champ.scare();
         }
+
+        //Call get_int_input again with the same options as before.
         int choice = get_int_input("What time is it?\n 1. Meal Time\n 2. Scare Time\n 3. Exit",
                                    "Please select a valid option",1,3);
     }
-    // : Create a loop that runs until the user chooses option 3:
-    //      - If 1 is chosen, loop through populated vector and call eat_person on each.
-    //          - This is NOT an example of polymorphism. Why? Answer in your README file.
-    //      - If 2 is chosen, print message saying "This is how my friends scare:"
-    //          - Loop through populated vector and call scare method on each pointer, printing return value to console
-    //          - This IS an example of polymorphism. Why? Answer in your README file.
-    //          - Print message saying how Champ scares, then call and print scare method on champ.
-    //      - Call get_int_input again with the same options as before.
 }
 
 void player_mode() {
