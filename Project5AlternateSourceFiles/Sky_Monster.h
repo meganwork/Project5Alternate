@@ -37,10 +37,12 @@ public:
      * Effects: sets number_people_eaten to npe if npe is in range
      *          0-100. Otherwise sets number_people_eaten to 100.
      */
-    void set_number_of wings(int wings);
+    void set_number_of_wings(int wings);
 
+    void growth_spurt(int wings);
 
     // pure virtual method to return a scary string
+    //dont include in the cpp
     virtual std::string scare() = 0;
 
     static const int MIN_WINGS = 2;
@@ -49,16 +51,5 @@ protected:
     int number_wings;
 };
 
-//SKY MONSTERS ALL HAVE WINGS
-// get_num_wings (ex of non-poly)
-
-//Cloud (growth spurt)
-//Comet growth spurt
-
-//comet scare
-
-//cloud is_raining
-//cloud stop_raining
-//cloud scare
 
 #endif //PROJECT5ALTERNATE_SKY_MONSTER_H
