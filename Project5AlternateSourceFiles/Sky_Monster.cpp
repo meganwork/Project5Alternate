@@ -1,25 +1,28 @@
 #include "Sky_Monster.h"
 
-class Sky_Monster {
-public:
-    /**
-     * Requires: nothing
-     * Modifies: number_people_eaten 
-     * Effects: sets number_people_eaten to random int in range 0-100
-     */
-    Sky_Monster();
+Sky_Monster::Sky_Monster() {
+    //Generate random number of wings, no less than 2
+    number_wings = rand();
+    if (number_wings < MIN_WINGS) {
+        number_wings = MIN_WINGS;
+    }
+}
 
-    /**
-     * Requires: nothing
-     * Modifies: nothing
-     * Effects: does nothing
-     */
-    virtual ~Water_Monster() = default;
+Sky_Monster::Sky_Monster(int wings) {
+    set_number_of_wings(wings);
+}
 
-    /**
-     * Requires: nothing
-     * Modifies: number_people_eaten 
-     * Effects: calls set_number_people_eaten with npe
-     */
-    explicit Water_Monster(int npe);
+int Sky_Monster::get_number_of_wings() const {
+    return number_wings;
+}
 
+void Sky_Monster::set_number_of_wings(int wings) {
+   //want max num of wings??? will set min instead
+   if (wings < MIN_WINGS) {
+        wings = MIN_WINGS;
+    }
+   if (wings > MAX_NUMBER_WINGS) {
+       wings = MAX_NUMBER_WINGS;
+   }
+    number_wings = wings;
+}
