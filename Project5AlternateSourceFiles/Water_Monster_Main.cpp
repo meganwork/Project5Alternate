@@ -80,23 +80,16 @@ void monster_mode() {
         if (choice == 2) {
             cout << "This is how my friends scare: " << endl;
             //Loop through populated vector and call scare method on each pointer
+            string message;
             for (int i = 0; i < friends.size(); ++i) {
                 //printing return value to console
-                //TODO: check if prints
-                friends[i]->scare();
+                message = friends[i]->scare();
             }
 
-
-//TODO: use to help print
-//            string message;
-//            for (int i = 0; i < Sky_Monster::MAX_NUMBER_WINGS / 2; ++i) {
-//                message = cm3.scare();
-
-
             //Print message saying how Champ scares
-            // TODO: then call and print scare method on champ.
             cout << "This is how Champ scares: " << endl;
-            champ.scare();
+            string champMessage;
+            champMessage = champ.scare();
         }
 
         //Call get_int_input again with the same options as before.

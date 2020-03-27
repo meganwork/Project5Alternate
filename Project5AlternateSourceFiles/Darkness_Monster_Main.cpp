@@ -26,12 +26,12 @@ int main() {
     }
 
     // Tell the user that there are monsters everywhere!
-    cout << "There are monsters everywhere!"
+    cout << "There are monsters everywhere!" << endl;
 
     //Loop through the vector and call the scare method on each. Print the return values.
-    //TODO: check output
+     string message;
      for(int i = 0; i < manyMonsters.size(); ++i) {
-         manyMonsters[i]->scare();
+         message = manyMonsters[i]->scare();
      }
     //Repeatedly give the user options to poke the eyes or run away.
      cout << "Do you want to poke their eyes or run?" << endl;

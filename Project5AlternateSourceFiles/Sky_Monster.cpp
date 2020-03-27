@@ -18,7 +18,6 @@ int Sky_Monster::get_number_of_wings() const {
 
 
 void Sky_Monster::set_number_of_wings(int wings) {
-   //want max num of wings??? will set min instead
    if (wings < MIN_WINGS) {
         wings = MIN_WINGS;
     }

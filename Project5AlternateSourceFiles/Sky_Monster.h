@@ -6,8 +6,8 @@ class Sky_Monster {
 public:
     /**
      * Requires: nothing
-     * Modifies:
-     * Effects:
+     * Modifies: nothing
+     * Effects: creates a sky_monster with random number of wings
      */
     Sky_Monster();
 
@@ -21,28 +21,32 @@ public:
     /**
      * Requires: nothing
      * Modifies: number of wings
-     * Effects: calls set_number_people_eaten with npe
+     * Effects: calls set_number_of_wings with wings
      */
     explicit Sky_Monster(int wings);
     /**
         * Requires: nothing
         * Modifies: nothing
-        * Effects: returns number_people_eaten
+        * Effects: returns number_of_wings
         */
     virtual int get_number_of_wings() const;
 
     /**
      * Requires: nothing
-     * Modifies: number_people_eaten 
-     * Effects: sets number_people_eaten to npe if npe is in range
-     *          0-100. Otherwise sets number_people_eaten to 100.
+     * Modifies: number_of wings 
+     * Effects: sets number_of_wings to wings if wings is in range
+     *          2-200. Otherwise sets number_of wings to 2 if < 2 or to 200 if > 200.
      */
     void set_number_of_wings(int wings);
 
+    /**
+     * Requires: nothing
+     * Modifies: number_of_wings
+     * Effects: increases number_of_wings by 2
+     */
     void growth_spurt(int wings);
 
     // pure virtual method to return a scary string
-    //dont include in the cpp
     virtual std::string scare() = 0;
 
     static const int MIN_WINGS = 2;
