@@ -37,7 +37,7 @@ int main() {
     //Time to grow! (not polymorphism)
     cout << "The monsters have grown stronger from scaring you!" << endl;
     for(int i = 0; i < severalMonsters.size(); ++i) {
-        severalMonsters[i]->growth_spurt(severalMonsters[i]->get_number_of_wings());
+        severalMonsters[i]->growth_spurt();
     }
 
     return 0;
