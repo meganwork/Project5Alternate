@@ -50,7 +50,7 @@ int main() {
          }
          //After poking all the eyes, loop through the vector again and output the scare methods again.
          for(int i = 0; i < manyMonsters.size(); ++i) {
-             manyMonsters[i]->poke_eye();
+             message = manyMonsters[i]->scare();
          }
      }
      //If they choose to run away, the program ends
