@@ -44,15 +44,15 @@ public:
      * Modifies: number_of_wings
      * Effects: increases number_of_wings by 2
      */
-    void growth_spurt(int wings);
+    void growth_spurt();
 
     // pure virtual method to return a scary string
     virtual std::string scare() = 0;
 
     static const int MIN_WINGS = 2;
-    static const int MAX_NUMBER_WINGS = 200;
+    static const int MAX_NUMBER_WINGS = 100;
 protected:
-    int number_wings;
+    int number_of_wings;
 };
 
 

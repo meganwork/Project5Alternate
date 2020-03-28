@@ -6,7 +6,8 @@ March 27, 2020
 This project is designed to demonstrate polymorphism using several types of monster superclasses and even more subclasses of various monster types.
 
 **Disclaimer** I was unable to get the starter code to build. I had been in contact with Lisa, tried many different solutions, even had her file transfer
-a minGW file to me in hopes that it would help, it did not. Alas, I did my best to implement these functions as well as I could without being able to run them for myself.
+a minGW file to me in hopes that it would help, it did not. Alas, I did my best to implement these functions as well as I could without being able to properly
+run them for myself or utilize my debugger (since it wouldn't build).
 
 In Water_Monster_Main (line 74), when the user selects for it to be meal time for the monster, the populated vector is looped through and has a
 call to eat_person in each iteration. This is not an example of polymorphism. Calling the function eat_person has no effect on whether the call is in
